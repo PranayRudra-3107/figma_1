@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Machine extends StatelessWidget {
+class Trails extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
     body:
@@ -28,7 +28,7 @@ class Machine extends StatelessWidget {
                     fillColor: Colors.white,
                     filled: true,
                     border: OutlineInputBorder(
-                        // borderRadius: BorderRadius.circular(10),
+                      // borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide.none
                     ),
                     hintText: 'Search by plant, model or machine',
