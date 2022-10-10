@@ -37,14 +37,34 @@ class _MyHomePageState extends State<MyHomePage> {
     Machine(),
     Trails(),
     Reports(),
-
+    Reports(),
+    // Scaffold.of(context).openDrawer(),
   ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+
         appBar: AppBar(
-          title: const Text("figma"),
+          title: Padding(
+            padding: const EdgeInsets.only(left: 60),
+            child: const Text("Dashboard",style:TextStyle(
+              color:Colors.black,
+            )),
+            
+          ),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.notifications,color: Colors.red,),
+              tooltip: 'Show Snackbar',
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('This is a snackbar')));
+              },
+            ),
+          ],
+          backgroundColor: Colors.white,
+
         ),
         body:
         screens[currentIndex],
@@ -74,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
             BottomNavigationBarItem(
               icon: Icon(Icons.menu_outlined),
               label: 'Menu',
+
             ),
           ],
 
@@ -129,35 +150,40 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(Icons.settings_suggest_sharp),
                 title: const Text('Machines'),
-                // onTap: () {
-                //   Navigator.of(context).push(
-                //     MaterialPageRoute(
-                //       builder: (context) =>  MyMachine(title: 'Figma'),
-                //     ),
-                //   );
-                //   //Navigator.pop(context);
-                // },
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) =>  Machine(),
+                    ),
+                  );
+                  //Navigator.pop(context);
+                },
               ),
               ListTile(
                 leading: Icon(Icons.find_in_page_sharp),
                 title: const Text('Trails'),
                 onTap: () {
-                  // Update the state of the app
-                  // ...
-                  // Then close the drawer
-                  Navigator.pop(context);
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) =>  Trails(),
+                    ),
+                  );// Then close the drawer
+                  //Navigator.pop(context);
                 },
               ),
               ListTile(
                 leading: Icon(Icons.poll),
                 title: const Text('Reports'),
                 onTap: () {
-                  // Update the state of the app
-                  // ...
-                  // Then close the drawer
-                  Navigator.pop(context);
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) =>  Reports(),
+                    ),
+                  );
+                  //Navigator.pop(context);
                 },
               ),
+
               ListTile(
                 leading: Icon(Icons.settings),
                 title: const Text('Settings'),
