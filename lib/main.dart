@@ -1,9 +1,12 @@
+import 'package:figma/appSettings.dart';
 import 'package:figma/home.dart';
 import 'package:flutter/material.dart';
 import 'machines.dart';
 import 'reports.dart';
 import 'trails.dart';
 import 'home.dart';
+import 'profileDetails.dart';
+import 'login.dart';
 void main() {
   runApp(MyApp());
 }
@@ -189,29 +192,35 @@ class _MyHomePageState extends State<MyHomePage> {
                 title: const Text('Settings'),
 
                 onTap: () {
-                  // Update the state of the app
-                  // ...
-                  // Then close the drawer
-                  Navigator.pop(context);
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) =>  ProfileDetails(),
+                    ),
+                  );
+                  //Navigator.pop(context);
                 },
               ),
               Spacer(),
               ListTile(
                 title: const Text('App Settings'),
                 onTap: () {
-                  // Update the state of the app
-                  // ...
-                  // Then close the drawer
-                  Navigator.pop(context);
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) =>  AppSettings(),
+                    ),
+                  );
+                  //Navigator.pop(context);
                 },
               ),
               ListTile(
                 title: const Text('Log Out'),
                 onTap: () {
-                  // Update the state of the app
-                  // ...
-                  // Then close the drawer
-                  Navigator.pop(context);
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) =>  Login(),
+                    ),
+                  );
+                  //Navigator.pop(context);
                 },
               ),
             ],

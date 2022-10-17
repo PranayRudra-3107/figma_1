@@ -113,10 +113,27 @@ class _State extends State<TrailsDetails> {
                   ),
                 ),
               ),
-            ], rows: const <DataRow>[
+            ], rows: <DataRow>[
               DataRow(cells: <DataCell>[
                 DataCell(Text('Sensor1')),
-                DataCell(Text('ON')),
+                DataCell(SizedBox(
+                  width: 35,
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 4,bottom: 4,right: 4),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          border: Border.all(
+                            color: Colors.green,
+                            width: 4
+                          )
+                        ),
+                      ),
+                      Text("ON")
+                    ],
+                  ),
+                )),
                 DataCell(Text('ON')),
                 DataCell(Text('ON')),
                 DataCell(Text('ON')),
