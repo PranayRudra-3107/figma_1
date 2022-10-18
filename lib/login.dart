@@ -1,7 +1,7 @@
+import 'package:figma/main.dart';
 import 'package:flutter/material.dart';
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
-
   @override
   State<Login> createState() => _LoginState();
 }
@@ -74,7 +74,10 @@ class _LoginState extends State<Login> {
               margin: EdgeInsets.only(top: constrains.maxHeight*0.05),
               child: ElevatedButton(
                 onPressed: (){
-
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyHomePage(title: 'figma',)),
+                  );
                 },
                 child: Text('LOGIN',style: TextStyle(fontWeight: FontWeight.bold , fontSize: 17),),
                 style: ElevatedButton.styleFrom(

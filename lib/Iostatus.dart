@@ -1,17 +1,14 @@
-import 'package:figma/Iostatus.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'details.dart';
-import 'package:figma/Kpi.dart';
+class Status extends StatefulWidget {
+  const Status({Key? key}) : super(key: key);
 
-class MachineDetails extends StatefulWidget {
-  const MachineDetails({Key? key}) : super(key: key);
   @override
-  State<MachineDetails> createState() => _State();
+  State<Status> createState() => _StatusState();
 }
-class _State extends State<MachineDetails> {
+
+class _StatusState extends State<Status> {
   @override
-  Widget build(BuildContext context) => DefaultTabController(
+  Widget build(BuildContext context) =>DefaultTabController(
     length: 3,
     child: Scaffold(
       appBar: AppBar(
@@ -30,7 +27,7 @@ class _State extends State<MachineDetails> {
               ),
             ),
             Text('ID: 135BA28',style: TextStyle(
-              fontSize: 10,color: Colors.black
+                fontSize: 10,color: Colors.black
             )),
           ],
         ),
@@ -45,13 +42,13 @@ class _State extends State<MachineDetails> {
         ),
 
       ),
-          body: TabBarView(
-            children: [
-              Details(),
-              Kpi(),
-              Status(),
-            ],
-          ),
-        ),
+      body: TabBarView(
+        children: [
+          Status(),
+          Status(),
+          Status(),
+        ],
+      ),
+    ),
   );
 }
