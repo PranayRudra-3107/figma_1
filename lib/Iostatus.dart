@@ -1,3 +1,5 @@
+import 'package:figma/analog.dart';
+import 'package:figma/digital.dart';
 import 'package:flutter/material.dart';
 class Status extends StatefulWidget {
   const Status({Key? key}) : super(key: key);
@@ -9,44 +11,49 @@ class Status extends StatefulWidget {
 class _StatusState extends State<Status> {
   @override
   Widget build(BuildContext context) =>DefaultTabController(
-    length: 3,
+    length: 2,
     child: Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white70,
+        backgroundColor: Colors.white,
+        elevation: 0,
         leadingWidth: 0,
+        toolbarHeight: 60,
         leading: SizedBox(),
-        title: Column(
-          children: [
-            Text('NF3535',
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w500,
-                fontFamily: 'Roboto',
-                letterSpacing: 0.5,
-                fontSize: 20,
-              ),
-            ),
-            Text('ID: 135BA28',style: TextStyle(
-                fontSize: 10,color: Colors.black
-            )),
-          ],
-        ),
         bottom: TabBar(
+          unselectedLabelColor: Colors.grey,
           indicatorColor: Colors.blue,
-          labelColor: Colors.black,
+          labelColor: Colors.blue,
+          indicator: BoxDecoration(
+            // border: Border.all(color: Colors.blue,),
+            borderRadius: BorderRadius.circular(50),
+          ),
           tabs: [
-            Tab(text: "Details",),
-            Tab(text: "KPl's",),
-            Tab(text: "IO Status",),
+            Tab(child: Container(
+               height: 30,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                border: Border.all(width: 1),
+                borderRadius: BorderRadius.circular(6)
+              ),
+              child: Text('Digital IOs'),
+            )),
+            Tab(child: Container(
+              height: 30,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                  border: Border.all(width: 1),
+                  borderRadius: BorderRadius.circular(6)
+              ),
+              child: Text('Analog IOs'),
+            )),
           ],
         ),
 
       ),
       body: TabBarView(
         children: [
-          Status(),
-          Status(),
-          Status(),
+          Digital(),
+          Analog()
         ],
       ),
     ),

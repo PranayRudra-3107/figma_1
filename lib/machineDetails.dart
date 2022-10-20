@@ -36,6 +36,7 @@ class _State extends State<MachineDetails> {
         ),
         bottom: TabBar(
           indicatorColor: Colors.blue,
+
           labelColor: Colors.black,
           tabs: [
             Tab(text: "Details",),
