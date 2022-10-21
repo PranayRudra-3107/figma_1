@@ -36,8 +36,8 @@ class _State extends State<MachineDetails> {
         ),
         bottom: TabBar(
           indicatorColor: Colors.blue,
-
-          labelColor: Colors.black,
+          unselectedLabelColor: Colors.black,
+          labelColor: Colors.blue,
           tabs: [
             Tab(text: "Details",),
             Tab(text: "KPl's",),

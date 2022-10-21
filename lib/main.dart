@@ -7,6 +7,7 @@ import 'trails.dart';
 import 'home.dart';
 import 'profileDetails.dart';
 import 'login.dart';
+import 'notifications.dart';
 void main() {
   runApp(MyApp());
 }
@@ -57,11 +58,15 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           actions: [
             IconButton(
-              icon: const Icon(Icons.notifications,color: Colors.red,),
-              tooltip: 'Show Snackbar',
+              icon: const Icon(Icons.notifications_sharp,color: Colors.black,),
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('This is a snackbar')));
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) =>  Notifications(),
+                  ),
+                );
+                //Navigator.pop(context);
+
               },
             ),
           ],
